@@ -5,17 +5,17 @@ module.exports = {
 	theme: {
 		container: {
 			center: true,
-			padding: {
-				DEFAULT: '1rem',
-				md: '2rem',
-			},
 		},
 		screens: {
-			sm: '576',
+			sm: '576px',
 			md: '768px',
-			lg: '976px',
+			lg: '992px',
 			xl: '1200px',
 			xxl: '1400px',
+		},
+
+		fontFamily: {
+			sans: ['Montserrat', 'sans-serif'],
 		},
 
 		extend: {},
