@@ -1,4 +1,6 @@
-const productsList = [
+import { ProductInterface } from '../interface/interface';
+
+const productsList: ProductInterface[] = [
 	{
 		id: 0,
 		name: 'Iphone 11',

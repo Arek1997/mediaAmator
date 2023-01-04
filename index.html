@@ -60,250 +60,56 @@
 						Kategorie
 					</h3>
 					<ul
-						class="flex flex-wrap items-center justify-evenly xl:min-w-[250px] xl:flex-col xl:gap-4"
+						class="category-list flex flex-wrap items-center justify-evenly xl:min-w-[250px] xl:flex-col xl:gap-4"
 					>
-						<li>
-							<button
-								class="active cursor-pointer rounded-xl py-2 px-4 text-sm transition-colors duration-300 hover:bg-black hover:text-yellow-300 sm:text-base md:text-lg xl:rounded-md xl:px-10"
-							>
-								Wszystkie
-							</button>
-						</li>
-						<li>
-							<button
-								class="cursor-pointer rounded-xl py-2 px-4 text-sm transition-colors duration-300 hover:bg-black hover:text-yellow-300 sm:text-base md:text-lg xl:rounded-md xl:px-10"
-							>
-								iphone
-							</button>
-						</li>
-						<li>
-							<button
-								class="cursor-pointer rounded-xl py-2 px-4 text-sm transition-colors duration-300 hover:bg-black hover:text-yellow-300 sm:text-base md:text-lg xl:rounded-md xl:px-10"
-							>
-								huawei
-							</button>
-						</li>
-						<li>
-							<button
-								class="cursor-pointer rounded-xl py-2 px-4 text-sm transition-colors duration-300 hover:bg-black hover:text-yellow-300 sm:text-base md:text-lg xl:rounded-md xl:px-10"
-							>
-								nokia
-							</button>
-						</li>
-						<li>
-							<button
-								class="cursor-pointer rounded-xl py-2 px-4 text-sm transition-colors duration-300 hover:bg-black hover:text-yellow-300 sm:text-base md:text-lg xl:rounded-md xl:px-10"
-							>
-								samsung
-							</button>
-						</li>
+						<template>
+							<li>
+								<button
+									class="active cursor-pointer rounded-xl py-2 px-4 text-sm transition-colors duration-300 hover:bg-black hover:text-yellow-300 sm:text-base md:text-lg xl:rounded-md xl:px-10"
+								>
+									Wszystkie
+								</button>
+							</li>
+						</template>
 					</ul>
 				</aside>
 				<section class="products auto-grid mt-20 gap-10 xl:grow xl:pl-10">
-					<article
-						class="product sale relative flex max-w-[350px] cursor-pointer flex-col items-center gap-2 rounded-2xl bg-white p-4 transition-shadow duration-300 hover:shadow-2xl"
-					>
-						<span
-							class="sale-text absolute top-0 right-0 rounded-md bg-black/75 px-2 py-1 text-yellow-300"
-							>Promocja</span
+					<template>
+						<article
+							class="product sale relative flex max-w-[350px] cursor-pointer flex-col items-center gap-2 rounded-2xl bg-white p-4 transition-shadow duration-300 hover:shadow-2xl"
 						>
-						<img
-							src="./src/images/iphone-11.jpg"
-							alt="iphone 11"
-							class="max-w-[230px]"
-						/>
-						<h4 class="font-bold sm:text-xl md:text-2xl">Iphone 11</h4>
-						<p class="text-center">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. A,
-							laudantium.
-						</p>
+							<span
+								class="sale-text absolute top-0 right-0 rounded-md bg-black/75 px-2 py-1 text-yellow-300"
+								>Promocja</span
+							>
+							<img
+								src="./src/images/iphone-11.jpg"
+								alt="iphone 11"
+								class="max-w-[230px]"
+							/>
+							<h4 class="font-bold sm:text-xl md:text-2xl">Iphone 11</h4>
+							<p class="text-center">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. A,
+								laudantium.
+							</p>
 
-						<div class="price-wrapper flex items-center justify-center gap-3">
-							<span
-								class="old-price relative text-sm font-bold before:absolute before:top-1/2 before:h-[2px] before:w-full before:-translate-y-1/2 before:rotate-[-15deg] before:bg-black"
-								>2999.99zł</span
+							<div class="price-wrapper flex items-center justify-center gap-3">
+								<span
+									class="old-price relative text-sm font-bold before:absolute before:top-1/2 before:h-[2px] before:w-full before:-translate-y-1/2 before:rotate-[-15deg] before:bg-black"
+									>2999.99zł</span
+								>
+								<span
+									class="current-price font-bold text-green-800 sm:text-xl md:text-2xl"
+									>2799.99zł</span
+								>
+							</div>
+							<button
+								class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
 							>
-							<span
-								class="current-price font-bold text-green-800 sm:text-xl md:text-2xl"
-								>2799.99zł</span
-							>
-						</div>
-						<button
-							class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
-						>
-							Dodaj do koszyka
-						</button>
-					</article>
-					<article
-						class="product relative flex max-w-[350px] cursor-pointer flex-col items-center gap-2 rounded-2xl bg-white p-4 transition-shadow duration-300 hover:shadow-2xl"
-					>
-						<span
-							class="sale-text absolute top-0 right-0 rounded-md bg-black/75 px-2 py-1 text-yellow-300"
-							>Promocja</span
-						>
-						<img
-							src="./src/images/iphone-11.jpg"
-							alt="iphone 11"
-							class="max-w-[230px]"
-						/>
-						<h4 class="font-bold sm:text-xl md:text-2xl">Iphone 11</h4>
-						<p class="text-center">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. A,
-							laudantium.
-						</p>
-
-						<div class="price-wrapper flex items-center justify-center gap-3">
-							<span
-								class="old-price relative text-sm font-bold before:absolute before:top-1/2 before:h-[2px] before:w-full before:-translate-y-1/2 before:rotate-[-15deg] before:bg-black"
-								>2999.99zł</span
-							>
-							<span
-								class="current-price font-bold text-green-800 sm:text-xl md:text-2xl"
-								>2799.99zł</span
-							>
-						</div>
-						<button
-							class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
-						>
-							Dodaj do koszyka
-						</button>
-					</article>
-					<article
-						class="product sale relative flex max-w-[350px] cursor-pointer flex-col items-center gap-2 rounded-2xl bg-white p-4 transition-shadow duration-300 hover:shadow-2xl"
-					>
-						<span
-							class="sale-text absolute top-0 right-0 rounded-md bg-black/75 px-2 py-1 text-yellow-300"
-							>Promocja</span
-						>
-						<img
-							src="./src/images/iphone-11.jpg"
-							alt="iphone 11"
-							class="max-w-[230px]"
-						/>
-						<h4 class="font-bold sm:text-xl md:text-2xl">Iphone 11</h4>
-						<p class="text-center">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. A,
-							laudantium.
-						</p>
-
-						<div class="price-wrapper flex items-center justify-center gap-3">
-							<span
-								class="old-price relative text-sm font-bold before:absolute before:top-1/2 before:h-[2px] before:w-full before:-translate-y-1/2 before:rotate-[-15deg] before:bg-black"
-								>2999.99zł</span
-							>
-							<span
-								class="current-price font-bold text-green-800 sm:text-xl md:text-2xl"
-								>2799.99zł</span
-							>
-						</div>
-						<button
-							class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
-						>
-							Dodaj do koszyka
-						</button>
-					</article>
-					<article
-						class="product relative flex max-w-[350px] cursor-pointer flex-col items-center gap-2 rounded-2xl bg-white p-4 transition-shadow duration-300 hover:shadow-2xl"
-					>
-						<span
-							class="sale-text absolute top-0 right-0 rounded-md bg-black/75 px-2 py-1 text-yellow-300"
-							>Promocja</span
-						>
-						<img
-							src="./src/images/iphone-11.jpg"
-							alt="iphone 11"
-							class="max-w-[230px]"
-						/>
-						<h4 class="font-bold sm:text-xl md:text-2xl">Iphone 11</h4>
-						<p class="text-center">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. A,
-							laudantium.
-						</p>
-
-						<div class="price-wrapper flex items-center justify-center gap-3">
-							<span
-								class="old-price relative text-sm font-bold before:absolute before:top-1/2 before:h-[2px] before:w-full before:-translate-y-1/2 before:rotate-[-15deg] before:bg-black"
-								>2999.99zł</span
-							>
-							<span
-								class="current-price font-bold text-green-800 sm:text-xl md:text-2xl"
-								>2799.99zł</span
-							>
-						</div>
-						<button
-							class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
-						>
-							Dodaj do koszyka
-						</button>
-					</article>
-					<article
-						class="product sale relative flex max-w-[350px] cursor-pointer flex-col items-center gap-2 rounded-2xl bg-white p-4 transition-shadow duration-300 hover:shadow-2xl"
-					>
-						<span
-							class="sale-text absolute top-0 right-0 rounded-md bg-black/75 px-2 py-1 text-yellow-300"
-							>Promocja</span
-						>
-						<img
-							src="./src/images/iphone-11.jpg"
-							alt="iphone 11"
-							class="max-w-[230px]"
-						/>
-						<h4 class="font-bold sm:text-xl md:text-2xl">Iphone 11</h4>
-						<p class="text-center">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. A,
-							laudantium.
-						</p>
-
-						<div class="price-wrapper flex items-center justify-center gap-3">
-							<span
-								class="old-price relative text-sm font-bold before:absolute before:top-1/2 before:h-[2px] before:w-full before:-translate-y-1/2 before:rotate-[-15deg] before:bg-black"
-								>2999.99zł</span
-							>
-							<span
-								class="current-price font-bold text-green-800 sm:text-xl md:text-2xl"
-								>2799.99zł</span
-							>
-						</div>
-						<button
-							class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
-						>
-							Dodaj do koszyka
-						</button>
-					</article>
-					<article
-						class="product relative flex max-w-[350px] cursor-pointer flex-col items-center gap-2 rounded-2xl bg-white p-4 transition-shadow duration-300 hover:shadow-2xl"
-					>
-						<span
-							class="sale-text absolute top-0 right-0 rounded-md bg-black/75 px-2 py-1 text-yellow-300"
-							>Promocja</span
-						>
-						<img
-							src="./src/images/iphone-11.jpg"
-							alt="iphone 11"
-							class="max-w-[230px]"
-						/>
-						<h4 class="font-bold sm:text-xl md:text-2xl">Iphone 11</h4>
-						<p class="text-center">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. A,
-							laudantium.
-						</p>
-
-						<div class="price-wrapper flex items-center justify-center gap-3">
-							<span
-								class="old-price relative text-sm font-bold before:absolute before:top-1/2 before:h-[2px] before:w-full before:-translate-y-1/2 before:rotate-[-15deg] before:bg-black"
-								>2999.99zł</span
-							>
-							<span
-								class="current-price font-bold text-green-800 sm:text-xl md:text-2xl"
-								>2799.99zł</span
-							>
-						</div>
-						<button
-							class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
-						>
-							Dodaj do koszyka
-						</button>
-					</article>
+								Dodaj do koszyka
+							</button>
+						</article>
+					</template>
 				</section>
 			</div>
 		</main>
