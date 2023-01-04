@@ -41,7 +41,7 @@ export default class Product {
 							>
 						</div>
 						<button
-							class="rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
+							class="add-to-cart rounded-lg bg-black py-2 px-3 text-white transition-colors hover:text-yellow-300 sm:text-lg"
 						>
 							Dodaj do koszyka
 						</button>

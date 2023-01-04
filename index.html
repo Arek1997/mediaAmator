@@ -45,9 +45,14 @@
 						<img src="./src/images/lupa.svg" class="inline" alt="Search" />
 					</label>
 				</div>
-				<div class="cart ml-auto flex items-end text-slate-50">
+				<div class="cart relative ml-auto flex items-end text-slate-50">
 					<img src="./src/images/shopping_cart.svg" alt="Shopping cart" />
-					<span class="align-bottom md:text-xl">Koszyk</span>
+					<span class="cart-text align-bottom md:text-xl">Koszyk</span>
+					<button
+						class="cart-clear absolute right-0 top-0 hidden -translate-y-1/4 translate-x-full text-yellow-300"
+					>
+						X
+					</button>
 				</div>
 			</div>
 		</header>

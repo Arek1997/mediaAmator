@@ -8,6 +8,12 @@ const categoriesUlList: HTMLUListElement =
 	document.querySelector('.category-list')!;
 
 const categoryButtons = document.getElementsByClassName('btn');
+const productButtons = document.getElementsByClassName('add-to-cart');
+const cart: HTMLSpanElement = document.querySelector('.cart-text')!;
+const clearCartButton: HTMLButtonElement =
+	document.querySelector('.cart-clear')!;
+
+let totalPrice = 0;
 
 const availableCategorues: string[] = ['Wszystkie'];
 
@@ -61,6 +67,23 @@ const toggleActiveClass = (e: MouseEvent) => {
 	);
 };
 
+const addToCart = (e: MouseEvent) => {
+	const target = e.target as HTMLButtonElement;
+
+	clearCartButton.classList.remove('hidden');
+	const productPrice = target.parentElement?.querySelector('.current-price')
+		?.textContent as string;
+
+	totalPrice += parseFloat(productPrice);
+	cart.textContent = totalPrice.toFixed(2) + 'zł';
+};
+
+const clearCart = () => {
+	totalPrice = 0;
+	cart.textContent = 'Koszyk';
+	clearCartButton.classList.add('hidden');
+};
+
 const uniqueCategories = new Set(
 	productsList.map((product) => product.category)
 );
@@ -70,6 +93,12 @@ availableCategorues.splice(1, 0, ...uniqueCategories);
 renderProductList(productsList, productsContainer);
 renderButtons(availableCategorues, categoriesUlList);
 
+clearCartButton.addEventListener('click', clearCart);
+
 (Array.from(categoryButtons) as HTMLButtonElement[]).forEach((button) =>
 	button.addEventListener('click', toggleActiveClass)
 );
+
+(Array.from(productButtons) as HTMLButtonElement[]).forEach((button) => {
+	button.addEventListener('click', addToCart);
+});
