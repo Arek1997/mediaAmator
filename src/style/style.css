@@ -35,3 +35,25 @@
 		max-width: 1320px;
 	}
 }
+
+.active {
+	background-color: #000;
+	color: #fde047;
+}
+
+article.product span.sale-text,
+article.product span.old-price {
+	display: none;
+}
+
+article.product.sale span.sale-text,
+article.product.sale span.old-price {
+	display: block;
+}
+
+.auto-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	justify-content: center;
+	justify-items: center;
+}
