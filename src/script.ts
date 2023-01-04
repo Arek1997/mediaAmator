@@ -7,16 +7,16 @@ const productsContainer: HTMLDivElement = document.querySelector('.products')!;
 const categoriesUlList: HTMLUListElement =
 	document.querySelector('.category-list')!;
 
+const categoryButtons = document.getElementsByClassName('btn');
+
 const availableCategorues: string[] = ['Wszystkie'];
 
 const renderProductList = (
-	productList: ProductInterface[],
+	productsToRenderList: ProductInterface[],
 	renderPlace: HTMLElement
 ) => {
-	productsList.forEach((product) => {
-		const item = new Product(product);
-		item.rander(renderPlace);
-	});
+	renderPlace.innerHTML = '';
+	productsToRenderList.forEach((product) => new Product(product, renderPlace));
 };
 
 const renderButtons = (
@@ -25,14 +25,40 @@ const renderButtons = (
 	initialActive = 'wszystkie'
 ) => {
 	categories.forEach((category) => {
-		const button = new Button(category);
-
 		if (category.toLowerCase() === initialActive.toLowerCase()) {
-			button.render(renderPlace, 'active');
+			new Button(category, renderPlace, initialActive);
 		} else {
-			button.render(renderPlace);
+			new Button(category, renderPlace);
 		}
 	});
+};
+
+const filterProductsCategories = (
+	filterValue = 'wszystkie',
+	arrToFilter = productsList
+) => {
+	if (filterValue === 'wszystkie') {
+		return arrToFilter;
+	} else {
+		const filteredArr = arrToFilter.filter(
+			(product) => product.category.toLowerCase() === filterValue
+		);
+		return filteredArr;
+	}
+};
+
+const toggleActiveClass = (e: MouseEvent) => {
+	const buttonsArr = Array.from(categoryButtons) as HTMLButtonElement[];
+	const target = e.target as HTMLButtonElement;
+	const targetCategory = target.dataset.category?.toLowerCase();
+
+	buttonsArr.forEach((button) => button.classList.remove('active'));
+	target.classList.add('active');
+
+	renderProductList(
+		filterProductsCategories(targetCategory),
+		productsContainer
+	);
 };
 
 const uniqueCategories = new Set(
@@ -43,3 +69,7 @@ availableCategorues.splice(1, 0, ...uniqueCategories);
 
 renderProductList(productsList, productsContainer);
 renderButtons(availableCategorues, categoriesUlList);
+
+(Array.from(categoryButtons) as HTMLButtonElement[]).forEach((button) =>
+	button.addEventListener('click', toggleActiveClass)
+);

@@ -1,9 +1,11 @@
 import { ProductInterface } from '../interface/interface';
 
 export default class Product {
-	constructor(public product: ProductInterface) {}
+	constructor(public product: ProductInterface, placeToRender: HTMLElement) {
+		this.render(placeToRender);
+	}
 
-	rander(placeToRender: HTMLElement) {
+	render(placeToRender: HTMLElement) {
 		const html = `
     <article
 						class="product ${
